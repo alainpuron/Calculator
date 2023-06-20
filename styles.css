@@ -1,0 +1,50 @@
+*, *::before, *::after{
+  font-family: fantasy;
+  box-sizing: border-box;
+  font-weight: normal;
+  
+}
+body{
+  padding:0%;
+  margin: 0%;
+  background: rgb(255, 255, 255);
+}
+.calculator-grid{             /* how the calculator will look like */
+  display: grid;                             
+  justify-content: center;
+  align-content: center;           /* this alings all the content in the center */
+  min-height: 100vh;
+  grid-template-columns: repeat(4 ,100px);           /* how will the colums look in the case 4 and 100px  */
+  grid-template-rows: minmax(120px , auto)  repeat(5 ,100px);
+  font-size: large;
+}
+.calculator-grid > button{   /* how the calculator's buttons  will look like */
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid rgba(248, 232, 230, 0.507);
+  outline: none;
+  background: rgba(199, 61, 61, 0.633);
+
+}
+.calculator-grid > button:hover{
+  background-color: rgba(250, 128, 114, 0.509);
+}
+.span-two{         /* span two will occupied two blocks instead of just one like the rest of buttons*/
+  grid-column: span 2;
+
+}
+
+.output{     /* what will be shows in the screen of the calculator . 1 to -1 so it goes from one side to the other*/
+  grid-column: 1/-1;
+  background-color: rgba(0, 0, 0, 0.191);
+  color: rgb(255, 250, 250);
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  flex-direction: column;  /* will make the contents aling on top of eachother */
+  padding: 20px;
+  word-wrap: break-word;
+  word-break: break-all;
+  font-size: xx-large;
+  
+}
