@@ -1,50 +1,367 @@
-*, *::before, *::after{
-  font-family: fantasy;
-  box-sizing: border-box;
-  font-weight: normal;
-  
+/* You can add global styles to this file, and also import other style files */
+body {
+  background-color: #fff;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Arial,Helvetica,sans-serif;
 }
-body{
-  padding:0%;
-  margin: 0%;
-  background: rgb(255, 255, 255);
+
+.container { 
+  width: 1240px !important;
 }
-.calculator-grid{             /* how the calculator will look like */
-  display: grid;                             
-  justify-content: center;
-  align-content: center;           /* this alings all the content in the center */
-  min-height: 100vh;
-  grid-template-columns: repeat(4 ,100px);           /* how will the colums look in the case 4 and 100px  */
-  grid-template-rows: minmax(120px , auto)  repeat(5 ,100px);
-  font-size: large;
+
+.bg-shadow {
+    box-shadow: 1px 1px 5px #d2d2d2;
 }
-.calculator-grid > button{   /* how the calculator's buttons  will look like */
+
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #dae0e3;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #dae0e3;
+}
+
+.table-dark.table-bordered {
+  border: 0;
+}
+
+.table-bordered th,
+.table-bordered td {
+  border: 1px solid #dee2e6 !important;
+}
+
+.table .thead-dark th {
+  color: #fff;
+  background-color: #517e95;
+  border: 1px solid #dee2e6;
+}
+
+.thead-top tr th {
+  border-bottom: 1px solid rgb(17, 17, 17) !important;
+  border-left: 1px solid rgb(187, 187, 187) !important; 
+  border-right: 1px solid rgb(187, 187, 187) !important; 
+}
+
+.thead-bottom tr th {
+  border-top: 1px solid rgb(17, 17, 17) !important;
+  border-left: 1px solid rgb(187, 187, 187) !important; 
+  border-right: 1px solid rgb(187, 187, 187) !important; 
+}
+
+table.dataTable.no-footer {
+  border-bottom: none !important;
+}
+
+.table-col-icon-1 { 
+  padding: 4px !important;
+}
+
+.table-col-icon-2 { 
+  padding: 4px !important;
+}
+
+.table-col-icon-3 { 
+  padding: 4px !important;
+}
+
+.table-col-icon-4 { 
+  padding: 4px !important;
+}
+
+.table-col-icon-5 { 
+  padding: 4px !important;
+}
+
+.table-col-icon-6 { 
+  padding: 4px !important;
+  width: 155px !important;
+}
+
+.table-col-icon-0 { 
+  padding: 4px !important;
+}
+
+.dataTables_info {
+  float: left !important;
+}
+
+.page-link {
+  font-size: 12px !important;
+}
+
+.page-item.active .page-link {
+  background-color: #517e95 !important;
+  border-color: #517e95 !important;
+}
+
+.dataTables_wrapper {
+  position: relative !important;
+}
+
+.dataTables_processing {
+  top: 45% !important;
+  position: absolute !important;
+  z-index: 2;
+}
+
+.disabled {
+  filter: alpha(opacity=50);
+}
+
+.input-group-text {
+  font-size: 12px !important;
+}
+
+.btn-primary {
+  color: #fff !important;
+  border-color: #517e95 !important;
+  background-color: #517e95 !important;
+  border-color: #517e95 !; 
+}
+
+.btn-primary:hover {
+  background-color: #355362 !important;
+  border-color: #355362 !important; }
+
+.form-control::-webkit-input-placeholder { color: #bdc3c7; }  /* WebKit, Blink, Edge */
+.form-control:-moz-placeholder { color: #bdc3c7; }  /* Mozilla Firefox 4 to 18 */
+.form-control::-moz-placeholder { color: #bdc3c7; }  /* Mozilla Firefox 19+ */
+.form-control:-ms-input-placeholder { color: #bdc3c7; }  /* Internet Explorer 10-11 */
+.form-control::-ms-input-placeholder { color: #bdc3c7; }  /* Microsoft Edge */
+
+.sidebar {
+  background-color: #355362;
+  padding: 2em 1em;  
+}
+
+.ng-sidebar--opened.ng-sidebar--over {
+  box-shadow: 0 0 2.5em rgba(85, 85, 85, 0.5);
+}
+
+.sidebar-link a {
+  text-decoration: none !important;
+  font-size: 14px !important;
+  color: #fff !important;
+  transition: .3s;
+}
+
+.sidebar-link a:hover {
+  color: #ccc !important;
+  text-decoration: none !important;
+}
+
+.sidebar-text {
+  text-decoration: none !important;
+  font-size: 14px !important;
+  color: #fff !important;
+}
+
+.openbtn {
+  font-size: 20px;
   cursor: pointer;
-  font-size: 2rem;
-  border: 1px solid rgba(248, 232, 230, 0.507);
-  outline: none;
-  background: rgba(199, 61, 61, 0.633);
-
-}
-.calculator-grid > button:hover{
-  background-color: rgba(250, 128, 114, 0.509);
-}
-.span-two{         /* span two will occupied two blocks instead of just one like the rest of buttons*/
-  grid-column: span 2;
-
+  background-color: #355362;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
 }
 
-.output{     /* what will be shows in the screen of the calculator . 1 to -1 so it goes from one side to the other*/
-  grid-column: 1/-1;
-  background-color: rgba(0, 0, 0, 0.191);
-  color: rgb(255, 250, 250);
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-around;
-  flex-direction: column;  /* will make the contents aling on top of eachother */
-  padding: 20px;
-  word-wrap: break-word;
-  word-break: break-all;
-  font-size: xx-large;
-  
+.openbtn:hover {
+  background-color: #1e333e;
+}
+
+.modal-title {
+  text-align: left !important;
+  font-size: 21px !important;
+  font-weight: 700 !important;
+  padding-top: 0 !important;
+  margin-top: 7px !important;
+  margin-bottom: 7px !important;
+
+  border-bottom: 3px solid #517e95 !important;
+  width: 100% !important;
+  cursor: auto !important;
+  color: #517e95 !important;
+  text-decoration: none !important;
+}
+
+.modal-close {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  cursor: pointer;
+}
+
+.modal-body {
+  padding-left: 30px !important;
+  padding-right: 30px !important;
+}
+
+a.nagr-breadcrumb, a.nagr-breadcrumb:visited {
+  color: #517e95;
+  font-size: 11pt;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+a.nagr-breadcrumb:hover {
+  text-decoration: none;
+}
+
+.nagr-breadcrumb-current {
+  color: #517e95; 
+  font-size: 11pt; 
+  font-weight: bold;
+}
+
+.tag { 
+  cursor: pointer; 
+  background: #708090; 
+  border-color: #708090;
+}
+
+.attribute-filter { 
+  cursor: pointer; 
+}
+
+.sortable-item-center {
+  padding: 6px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: center;
+  cursor: grab;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #adadad;
+  background-color: white;
+}
+
+.sortable-item-left {
+  padding: 6px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: left;
+  cursor: grab;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #adadad;
+  background-color: white;
+}
+
+.sortable-item-constraint {
+  padding: 6px 12px;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: left;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #adadad;
+  background-color: white;
+}
+
+.sortable-item-active {
+  background-color: #e6e6e6;
+  box-shadow: inset 0 3px 5px rgba(0,0,0,.125);
+}
+
+.sortable-container {
+  background-color: #B2CBD8;
+}
+
+.dataTables_empty {
+  display: none !important;
+}
+
+.draggable-container {
+  background-color: #B2CBD8;
+  height: 600px;
+}
+
+.draggable {
+  z-index: 1;
+  user-select: none;
+  color: #537E95;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: left;
+  cursor: grab;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  border-color: #adadad;
+  background-color: white;
+}
+
+.drop-zone {
+  background-color: #B2CBD8;
+}
+
+.drop-zone-title {
+  background-color: #B2CBD8;
+}
+
+.drop-zone-placeholder {
+  z-index: 1;
+  user-select: none;
+  color: rgb(212, 212, 212);
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.4em;
+  text-align: left;
+  border: 1px dashed transparent;
+  border-radius: 4px;
+  border-color: #c5c5c5;
+  background-color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.remove-column, .trash-column {
+  z-index: 2;
+}
+
+.standardized-checkbox {
+    font-size: 12px !important; 
+    padding: 10px 12px 10px 12px !important;
+    background-color: rgb(248, 249, 250) !important;
+}
+
+button.calendar, button.calendar:active {
+  width: 2.75rem;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+  background-repeat: no-repeat;
+  background-size: 23px;
+  background-position: center;
+}
+
+.invalid-date-range {
+  width: 100%;
+  margin-top: .25rem;
+  font-size: 80%;
+  color: #dc3545;
+}
+
+.popover {
+position: absolute;
+top: 0;
+left: 0;
+}
+
+.popover-arrow {
+position: absolute;
+}
+
+.tooltip {
+position: absolute;
+}
+
+.tooltip-arrow {
+position: absolute;
 }
